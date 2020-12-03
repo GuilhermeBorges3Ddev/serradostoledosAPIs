@@ -1,0 +1,26 @@
+{
+  "name": "serradostoledosapis",
+  "version": "1.0.0",
+  "description": "node api online available",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuilhermeBorges3Ddev/serradostoledosAPIs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuilhermeBorges3Ddev/serradostoledosAPIs/issues"
+  },
+  "homepage": "https://github.com/GuilhermeBorges3Ddev/serradostoledosAPIs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "10.16.3"
+  }
+}
