@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 const express = require("express");
-const router = express.Router(); 
 
 const app = express();
+app.use(express.json()); // Make sure it comes back as json
 
 const DB_USER = process.env.DB_USER;
 const DB_NAME = process.env.DB_NAME;
@@ -35,17 +35,18 @@ let DenunciationsAndFeedbacksSchema = new Schema({
     message: String  
 }, {collection: 'DenunciationsAndFeedbacks'});  
 
-router.get('/', function(req, res, next) {  
-    DenunciationsAndFeedbacksSchema.find({}, function(err, result) {
-        if (err) {
-          res.send(err);
-        } else {
-          res.send(result);
-        }
-    })
+app.get('/', function(req, res, next) {  
+    const denunciationsAndFeedbacks = DenunciationsAndFeedbacksSchema.find({});
+    try {
+        res.send(denunciationsAndFeedbacks);
+    } catch (err) {
+        res.status(500).send(err);
+    }
 });  
+
+app.listen(3000, () => { console.log('Server is running...') });
      
-/*router.post('/new', function(req, res, next) {  
+/*app.post('/new', function(req, res, next) {  
     var item = {  
       nome: req.body.nome,  
       email: req.body.email,  
@@ -53,4 +54,4 @@ router.get('/', function(req, res, next) {
     };
 });*/  
 
-module.exports = router;
+module.exports = app;
