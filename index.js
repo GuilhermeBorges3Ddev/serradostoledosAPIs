@@ -35,17 +35,15 @@ let DenunciationsAndFeedbacksSchema = new Schema({
     message: String  
 }, {collection: 'DenunciationsAndFeedbacks'});  
 
-app.get('/', function(req, res, next) {  
-    const denunciationsAndFeedbacks = DenunciationsAndFeedbacksSchema.find({});
+app.get('/', async(req, res, next) {  
+    const denunciationsAndFeedbacks = await DenunciationsAndFeedbacksSchema.find({});
     try {
         res.send(denunciationsAndFeedbacks);
     } catch (err) {
         res.status(500).send(err);
     }
 });  
-
-app.listen(3000, () => { console.log('Server is running...') });
-     
+    
 /*app.post('/new', function(req, res, next) {  
     var item = {  
       nome: req.body.nome,  
