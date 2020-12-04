@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/GuilhermeBorges3Ddev/serradostoledosAPIs#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.11.3",
+    "dotenv": "^8.2.0"
   },
   "engines": {
     "node": "10.16.3"
