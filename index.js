@@ -35,7 +35,7 @@ let DenunciationsAndFeedbacksSchema = new Schema({
     message: String  
 }, {collection: 'DenunciationsAndFeedbacks'});  
 
-app.get('/', async(req, res, next) {  
+app.get('/', async(req, res, next) => {  
     const denunciationsAndFeedbacks = await DenunciationsAndFeedbacksSchema.find({});
     try {
         res.send(denunciationsAndFeedbacks);
