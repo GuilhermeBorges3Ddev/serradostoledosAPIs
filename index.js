@@ -30,12 +30,12 @@ mongoose.connect(url,
   });
 
 //Defining the model and the teo necessary queries
-var DenunciationsAndFeedbacksSchema = new Schema({    
+let DenunciationsAndFeedbacksSchema = new Schema({    
     contentType: String,  
     message: String  
 }, {collection: 'DenunciationsAndFeedbacks'});  
 
-router.get('/allPosts', function(req, res, next) {  
+router.get('/', function(req, res, next) {  
     DenunciationsAndFeedbacksSchema.find({}, function(err, result) {
         if (err) {
           res.send(err);
