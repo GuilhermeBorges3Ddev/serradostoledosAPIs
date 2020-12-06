@@ -22,15 +22,14 @@ app.listen(3000, () => {
 })
 
 //Requests
-app.get("/", (req, res) => {
-    res.send("First request");
-});
-
-app.get("/posts", (req, res) => {
-    let users = ["Pawan", "Superguy", "Flutter Guy", "Max"];
-    res.send({
-        users: users,
-    });
+app.get("/posts", async (req, res) => {
+    try {
+        const docs = await Post.find();
+        //docs.map(doc => doc.name).sort();
+        res.send(docs)
+    } catch(err) {
+        res.send({ message: err})
+    }
 });
 
 app.post("/create_post",  async (req, res) => {
@@ -41,4 +40,4 @@ app.post("/create_post",  async (req, res) => {
     } catch(err) {
         res.send({ message: err})
     }
-})
+});
