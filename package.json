@@ -2,10 +2,10 @@
   "name": "serradostoledosapis",
   "version": "1.0.0",
   "description": "node api online available",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,10 @@
   },
   "homepage": "https://github.com/GuilhermeBorges3Ddev/serradostoledosAPIs#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.3",
-    "dotenv": "^8.2.0"
+    "nodemon": "^2.0.6"
   },
   "engines": {
     "node": "10.16.3"
